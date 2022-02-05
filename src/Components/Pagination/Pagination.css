@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.currentPage {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  background: #ffffff;
+  border: 1px solid #3f3f3f;
+  border-radius: 3px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: relative;
+}
+
+.next-icon {
+  display: inline-block;
+  font-weight: 100;
+  transform: translateY(16%);
+}
