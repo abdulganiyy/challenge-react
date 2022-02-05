@@ -56,6 +56,15 @@ select:focus,
 select:focus-visible,
 select:focus-within {
   border: none;
+  outline: none;
+}
+
+option,
+option:active,
+option:focus,
+option::selection {
+  outline: none;
+  border: none;
 }
 
 @media screen and (max-width: 900px) {

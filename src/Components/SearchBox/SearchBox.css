@@ -12,6 +12,11 @@
   padding: 13px 32px;
   border: 0.5px solid #bdbdbd;
   border-radius: 2px;
+  outline: none;
+}
+
+.searchbox:focus {
+  outline: none;
 }
 
 .search-icon {
