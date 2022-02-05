@@ -25,7 +25,6 @@ const Templates = () => {
         const response = await axios.get(
           "https://front-end-task-dot-result-analytics-dot-fpls-dev.uc.r.appspot.com/api/v1/public/task_templates"
         );
-        // console.log(response.data);
         setdata(response.data);
         setloading(false);
       } catch (error) {}
@@ -33,31 +32,6 @@ const Templates = () => {
 
     getData();
   }, []);
-
-  useEffect(() => {
-    console.log(nameOrder, dateOrder);
-    if (data.length) {
-      let sortedData = [...data];
-
-      if (nameOrder) {
-        sortedData =
-          nameOrder === "Ascending"
-            ? sortedData.sort((a, b) => a.name.localeCompare(b.name))
-            : sortedData.sort((a, b) => b.name.localeCompare(a.name));
-      } else if (dateOrder) {
-        sortedData =
-          dateOrder === "Ascending"
-            ? sortedData.sort(
-                (a, b) => new Date(a.created) - new Date(b.created)
-              )
-            : sortedData.sort(
-                (a, b) => new Date(b.created) - new Date(a.created)
-              );
-      }
-
-      setdata(sortedData);
-    }
-  }, [nameOrder, dateOrder]);
 
   let filteredData = [...data];
 
@@ -67,15 +41,15 @@ const Templates = () => {
       )
     : filteredData;
 
-  // filteredData =
-  //   nameOrder === "Ascending"
-  //     ? filteredData.sort((a, b) => a.name.localeCompare(b.name))
-  //     : filteredData.sort((a, b) => b.name.localeCompare(a.name));
+  filteredData =
+    nameOrder === "Ascending"
+      ? filteredData.sort((a, b) => a.name.localeCompare(b.name))
+      : filteredData.sort((a, b) => b.name.localeCompare(a.name));
 
-  // filteredData =
-  //   dateOrder === "Ascending"
-  //     ? filteredData.sort((a, b) => new Date(a.created) - new Date(b.created))
-  //     : filteredData.sort((a, b) => new Date(b.created) - new Date(a.created));
+  filteredData =
+    dateOrder === "Ascending"
+      ? filteredData.sort((a, b) => new Date(a.created) - new Date(b.created))
+      : filteredData.sort((a, b) => new Date(b.created) - new Date(a.created));
 
   filteredData =
     category !== "All"
