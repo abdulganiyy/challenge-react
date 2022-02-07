@@ -80,7 +80,13 @@ const Templates = () => {
         for? Search from the 1000+ available templates
       </div>
       {loading ? (
-        <img className="loading-gif" src={loadingGif} alt="articles-loading" />
+        <div className="loadingGif-wrapper">
+          <img
+            className="loading-gif"
+            src={loadingGif}
+            alt="articles-loading"
+          />
+        </div>
       ) : (
         <div className="templates-wrapper">
           <div className="templates-header">

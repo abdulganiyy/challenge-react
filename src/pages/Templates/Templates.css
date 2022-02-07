@@ -30,8 +30,10 @@
   gap: 23px;
 }
 
-.loading-gif {
-  margin-left: 15rem;
+.loadingGif-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 900px) {
@@ -43,7 +45,6 @@
   }
 
   .loading-gif {
-    margin-left: 10rem;
     width: 23rem;
   }
 }
@@ -57,7 +58,6 @@
   }
 
   .loading-gif {
-    margin-left: 6rem;
     width: 17rem;
   }
 }
